@@ -1,5 +1,7 @@
+import Foundation
+
 public enum AddAccountModel {
-    public struct Request: Encodable {
+    public struct Request: Model {
         let name: String
         let email: String
         let password: String
