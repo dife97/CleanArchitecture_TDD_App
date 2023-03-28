@@ -1,5 +1,5 @@
 public enum AddAccountModel {
-    public struct Request {
+    public struct Request: Encodable {
         let name: String
         let email: String
         let password: String
