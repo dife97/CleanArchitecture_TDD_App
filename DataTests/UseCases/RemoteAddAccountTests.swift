@@ -7,8 +7,7 @@ final class RemoteAddAccountTests: XCTestCase {
     func test_add_should_call_httpClient_with_correct_url() {
         let url = URL(string: "any-url.com")!
         let (sut, httpClient) = makeSUT(url: url)
-        let addAccountModel = makeAddAccountRequestModel()
-        sut.add(account: addAccountModel)
+        sut.add(account: makeAddAccountRequestModel()) { _ in }
 
         XCTAssertEqual(httpClient.urls, [url])
     }
@@ -16,10 +15,21 @@ final class RemoteAddAccountTests: XCTestCase {
     func test_add_should_call_httpClient_with_correct_data() {
         let (sut, httpClient) = makeSUT()
         let addAccountModel = makeAddAccountRequestModel()
-        sut.add(account: addAccountModel)
+        sut.add(account: addAccountModel) { _ in }
 
         XCTAssertEqual(httpClient.data, addAccountModel.toData())
-    }    
+    }
+
+    func test_add_should_complete_with_error_if_client_fails() {
+        let (sut, httpClient) = makeSUT()
+        let exp = expectation(description: "waiting")
+        sut.add(account: makeAddAccountRequestModel()) { error in
+            XCTAssertEqual(error, .unexpected)
+            exp.fulfill()
+        }
+        httpClient.completeWithError(.noConnectivity)
+        wait(for: [exp], timeout: 1)
+    }
 }
 
 extension RemoteAddAccountTests {
