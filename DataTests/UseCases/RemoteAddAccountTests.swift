@@ -10,7 +10,7 @@ final class RemoteAddAccountTests: XCTestCase {
         let addAccountModel = makeAddAccountRequestModel()
         sut.add(account: addAccountModel)
 
-        XCTAssertEqual(httpClient.url, url)
+        XCTAssertEqual(httpClient.urls, [url])
     }
 
     func test_add_should_call_httpClient_with_correct_data() {
@@ -19,7 +19,7 @@ final class RemoteAddAccountTests: XCTestCase {
         sut.add(account: addAccountModel)
 
         XCTAssertEqual(httpClient.data, addAccountModel.toData())
-    }
+    }    
 }
 
 extension RemoteAddAccountTests {
