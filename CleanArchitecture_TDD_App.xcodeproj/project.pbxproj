@@ -114,9 +114,8 @@
 		9490D01C29D26E9200F177F0 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				9490D02229D26F5600F177F0 /* AddAccount.swift */,
-				9490D02429D2705F00F177F0 /* AddAccountModel.swift */,
-				9490D04629D27B8F00F177F0 /* Model.swift */,
+				9490D04E29D27CB000F177F0 /* UseCases */,
+				9490D04F29D27CB600F177F0 /* Models */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -124,8 +123,8 @@
 		9490D02C29D270D500F177F0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				9490D04829D27BE900F177F0 /* RemoteAddAccount.swift */,
-				9490D04A29D27C2000F177F0 /* HTTPPostClient.swift */,
+				9490D05029D27CBA00F177F0 /* UseCases */,
+				9490D05129D27CC100F177F0 /* HTTP */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -133,8 +132,8 @@
 		9490D03729D270E600F177F0 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
-				9490D03829D270E600F177F0 /* RemoteAddAccountTests.swift */,
-				9490D04C29D27C6400F177F0 /* HTTPClientSpy.swift */,
+				9490D05229D27CD100F177F0 /* UseCases */,
+				9490D05329D27CE100F177F0 /* Resources */,
 			);
 			path = DataTests;
 			sourceTree = "<group>";
@@ -144,6 +143,55 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9490D04E29D27CB000F177F0 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				9490D02229D26F5600F177F0 /* AddAccount.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		9490D04F29D27CB600F177F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9490D02429D2705F00F177F0 /* AddAccountModel.swift */,
+				9490D04629D27B8F00F177F0 /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9490D05029D27CBA00F177F0 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				9490D04829D27BE900F177F0 /* RemoteAddAccount.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		9490D05129D27CC100F177F0 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				9490D04A29D27C2000F177F0 /* HTTPPostClient.swift */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		9490D05229D27CD100F177F0 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				9490D03829D270E600F177F0 /* RemoteAddAccountTests.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		9490D05329D27CE100F177F0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9490D04C29D27C6400F177F0 /* HTTPClientSpy.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
