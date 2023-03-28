@@ -20,7 +20,7 @@ public enum AddAccountModel {
         }
     }
 
-    public struct Response {
+    public struct Response: Model {
         let id: String
         let name: String
         let email: String

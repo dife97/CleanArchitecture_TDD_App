@@ -20,11 +20,16 @@ final class RemoteAddAccountTests: XCTestCase {
         XCTAssertEqual(httpClient.data, addAccountModel.toData())
     }
 
-    func test_add_should_complete_with_error_if_client_fails() {
+    func test_add_should_complete_with_error_if_client_completes_with_error() {
         let (sut, httpClient) = makeSUT()
         let exp = expectation(description: "waiting")
-        sut.add(account: makeAddAccountRequestModel()) { error in
-            XCTAssertEqual(error, .unexpected)
+        sut.add(account: makeAddAccountRequestModel()) { result in
+            switch result {
+            case .failure(let error):
+                XCTAssertEqual(error, .unexpected)
+            case .success(_):
+                XCTFail("Expected error but received \(result) instead")
+            }
             exp.fulfill()
         }
         httpClient.completeWithError(.noConnectivity)
