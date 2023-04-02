@@ -41,27 +41,43 @@ final class RemoteAddAccountTests: XCTestCase {
             httpClient.completeWithData(makeInvalidData())
         })
     }
+
+    func test_add_should_not_complete_if_sut_has_been_deallocated() {
+        let httpClient = HTTPClientSpy()
+        var sut: RemoteAddAccount? = RemoteAddAccount(
+            url: makeURL(),
+            httpClient: httpClient
+        )
+        var result: Result<AddAccountModel.Response, DomainError>?
+        sut?.add(account: makeAddAccountRequestModel()) { result = $0 }
+        sut = nil
+        httpClient.completeWithError(.noConnectivity)
+        XCTAssertNil(result)
+    }
 }
 
 extension RemoteAddAccountTests {
 
     private func makeSUT(
         url: URL = URL(string: "any-url.com")!,
-        file: StaticString = #filePath,
-        line: UInt = #line
+        _ file: StaticString = #filePath,
+        _ line: UInt = #line
     ) -> (RemoteAddAccount, HTTPClientSpy) {
         let url = url
         let httpClient = HTTPClientSpy()
-        let sut = RemoteAddAccount(url: url, httpClient: httpClient)
-        checkMemoryLeak(for: sut, file: file, line: line)
-        checkMemoryLeak(for: httpClient, file: file, line: line)
+        let sut = RemoteAddAccount(
+            url: url,
+            httpClient: httpClient
+        )
+        checkMemoryLeak(for: sut, file, line)
+        checkMemoryLeak(for: httpClient, file, line)
         return (sut, httpClient)
     }
 
     private func checkMemoryLeak(
         for instance: AnyObject,
-        file: StaticString = #filePath,
-        line: UInt = #line
+        _ file: StaticString = #filePath,
+        _ line: UInt = #line
     ) {
         addTeardownBlock { [weak instance] in
             XCTAssertNil(instance, file: file, line: line)
