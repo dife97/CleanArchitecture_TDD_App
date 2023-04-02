@@ -20,6 +20,8 @@ public final class RemoteAddAccount: AddAccount {
             case .success(let data):
                 if let model: AddAccountModel.Response = data.toModel() {
                     onComplete(.success(model))
+                } else {
+                    onComplete(.failure(.unexpected))
                 }
 
             case .failure:
