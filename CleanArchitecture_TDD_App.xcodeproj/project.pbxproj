@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		947ECA1829DA0E57001D8B12 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947ECA1729DA0E57001D8B12 /* Data+Extension.swift */; };
 		9490D02329D26F5600F177F0 /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9490D02229D26F5600F177F0 /* AddAccount.swift */; };
 		9490D02529D2705F00F177F0 /* AddAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9490D02429D2705F00F177F0 /* AddAccountModel.swift */; };
 		9490D03929D270E600F177F0 /* RemoteAddAccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9490D03829D270E600F177F0 /* RemoteAddAccountTests.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		947ECA1729DA0E57001D8B12 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		9490D01B29D26E9200F177F0 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9490D02229D26F5600F177F0 /* AddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccount.swift; sourceTree = "<group>"; };
 		9490D02429D2705F00F177F0 /* AddAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountModel.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		947ECA1629DA0E49001D8B12 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				947ECA1729DA0E57001D8B12 /* Data+Extension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		9490CFF629D26DF600F177F0 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +138,7 @@
 		9490D02C29D270D500F177F0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				947ECA1629DA0E49001D8B12 /* Helpers */,
 				9490D05029D27CBA00F177F0 /* UseCases */,
 				9490D05129D27CC100F177F0 /* HTTP */,
 			);
@@ -368,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9490D04B29D27C2000F177F0 /* HTTPPostClient.swift in Sources */,
+				947ECA1829DA0E57001D8B12 /* Data+Extension.swift in Sources */,
 				9490D05829D2817B00F177F0 /* HTTPError.swift in Sources */,
 				9490D04929D27BE900F177F0 /* RemoteAddAccount.swift in Sources */,
 			);

@@ -27,12 +27,29 @@ final class RemoteAddAccountTests: XCTestCase {
             switch result {
             case .failure(let error):
                 XCTAssertEqual(error, .unexpected)
-            case .success(_):
+            case .success:
                 XCTFail("Expected error but received \(result) instead")
             }
             exp.fulfill()
         }
         httpClient.completeWithError(.noConnectivity)
+        wait(for: [exp], timeout: 1)
+    }
+
+    func test_add_should_complete_with_account_if_client_completes_with_data() {
+        let (sut, httpClient) = makeSUT()
+        let exp = expectation(description: "waiting")
+        let expectedAccount = makeAccountModel()
+        sut.add(account: makeAddAccountRequestModel()) { result in
+            switch result {
+            case .success(let receivedAccount):
+                XCTAssertEqual(receivedAccount, expectedAccount)
+            case .failure:
+                XCTFail("Expected success but received \(result) instead")
+            }
+            exp.fulfill()
+        }
+        httpClient.completeWithData(expectedAccount.toData()!)
         wait(for: [exp], timeout: 1)
     }
 }
@@ -53,6 +70,15 @@ extension RemoteAddAccountTests {
             email: "anyEmail@email.com",
             password: "anyPassword",
             passwordConfirmation: "anyPassword"
+        )
+    }
+
+    private func makeAccountModel() -> AddAccountModel.Response {
+        AddAccountModel.Response(
+            id: "anyID",
+            name: "anyName",
+            email: "anyEmail@email.com",
+            password: "anyPassword"
         )
     }
 }

@@ -16,4 +16,8 @@ class HTTPClientSpy: HTTPPostClient {
     func completeWithError(_ error: HTTPError) {
         onComplete?(.failure(error))
     }
+
+    func completeWithData(_ data: Data) {
+        onComplete?(.success(data))
+    }
 }
