@@ -29,7 +29,7 @@ final class RemoteAddAccountTests: XCTestCase {
 
     func test_add_should_complete_with_account_if_client_completes_with_validData() {
         let (sut, httpClient) = makeSUT()
-        let account = makeAccountModel()
+        let account = makeAccountResponseModel()
         expect(sut, completeWith: .success(account), when: {
             httpClient.completeWithData(account.toData()!)
         })
@@ -74,16 +74,6 @@ extension RemoteAddAccountTests {
         return (sut, httpClient)
     }
 
-    private func checkMemoryLeak(
-        for instance: AnyObject,
-        _ file: StaticString = #filePath,
-        _ line: UInt = #line
-    ) {
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(instance, file: file, line: line)
-        }
-    }
-
     private func expect(
         _ sut: RemoteAddAccount,
         completeWith expectedResult: Result<AddAccountModel.Response, DomainError>,
@@ -111,10 +101,6 @@ extension RemoteAddAccountTests {
         wait(for: [exp], timeout: 1)
     }
 
-    private func makeURL() -> URL {
-        URL(string: "any-url.com")!
-    }
-
     private func makeAddAccountRequestModel() -> AddAccountModel.Request {
         AddAccountModel.Request(
             name: "anyName",
@@ -122,18 +108,5 @@ extension RemoteAddAccountTests {
             password: "anyPassword",
             passwordConfirmation: "anyPassword"
         )
-    }
-
-    private func makeAccountModel() -> AddAccountModel.Response {
-        AddAccountModel.Response(
-            id: "anyID",
-            name: "anyName",
-            email: "anyEmail@email.com",
-            password: "anyPassword"
-        )
-    }
-
-    private func makeInvalidData() -> Data {
-        Data("invalid_data".utf8)
     }
 }
