@@ -15,6 +15,7 @@ final class InfraTests: XCTestCase {
         let exp = expectation(description: "waiting")
         URLProtocolStub.observeRequest { request in
             XCTAssertEqual(url, request.url)
+            XCTAssertEqual("POST", request.httpMethod)
             exp.fulfill()
         }
         wait(for: [exp], timeout: 1)
