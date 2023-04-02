@@ -1,5 +1,15 @@
 import Foundation
+import Alamofire
 
-class AlamofireAdapter {
+public final class AlamofireAdapter {
 
+    private let session: Session
+
+    public init(session: Session = .default) {
+        self.session = session
+    }
+
+    public func post(to url: URL) {
+        session.request(url).resume()
+    }
 }
