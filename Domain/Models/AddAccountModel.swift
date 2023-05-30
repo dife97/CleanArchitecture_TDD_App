@@ -1,5 +1,3 @@
-import Foundation
-
 public enum AddAccountModel {
     public struct Request: Model {
         let name: String

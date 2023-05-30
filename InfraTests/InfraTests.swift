@@ -4,14 +4,14 @@ import Alamofire
 
 final class InfraTests: XCTestCase {
 
-    func test_post_should_make_request_with_valid_url_and_method() {
+    func test_post_shouldMakeRequestWithValidURLAndMethod() {
         let url = makeURL()
         let configuration = URLSessionConfiguration.default
         configuration.protocolClasses = [URLProtocolStub.self]
         let session = Session(configuration: configuration)
-
         let sut = AlamofireAdapter(session: session)
         sut.post(to: url)
+
         let exp = expectation(description: "waiting")
         URLProtocolStub.observeRequest { request in
             XCTAssertEqual(url, request.url)
