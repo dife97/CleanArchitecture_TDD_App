@@ -3,8 +3,8 @@ import Infra
 
 final class URLSessionAdapterTests: XCTestCase {
 
-    func test_post_shouldMakeRequestWithValidURLAndMethod() {
-        let url = makeURL()
+    func test_post_shouldMakeRequestWithValidURLAndMethod() throws {
+        let url = try makeURL()
         let data = makeValidData()
         testRequestFor(url: url, data: data) { request in
             XCTAssertEqual(url, request.url)
@@ -13,9 +13,8 @@ final class URLSessionAdapterTests: XCTestCase {
         }
     }
 
-    func test_post_shouldMakeRequestWithNoData() {
-        let url = makeURL()
-        testRequestFor(url: url, data: nil) { request in
+    func test_post_shouldMakeRequestWithNoData() throws {
+        testRequestFor(url: try makeURL(), data: nil) { request in
             XCTAssertNil(request.httpBodyStream)
         }
     }

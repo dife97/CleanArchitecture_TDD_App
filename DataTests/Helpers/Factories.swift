@@ -20,7 +20,7 @@ extension XCTestCase {
         Data("{\"name\":\"Diego\"}".utf8)
     }
 
-    func makeURL() -> URL {
-        URL(string: "any-url.com")!
+    func makeURL() throws -> URL {
+        try XCTUnwrap(URL(string: "any-url.com"))
     }
 }
