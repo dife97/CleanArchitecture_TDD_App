@@ -4,32 +4,20 @@ import Infra
 final class URLSessionAdapterTests: XCTestCase {
 
     func test_post_shouldMakeRequestWithValidURLAndMethod() {
-        let sut = makeSUT()
         let url = makeURL()
         let data = makeValidData()
-
-        sut.post(to: url, with: data)
-
-        let expectation = expectation(description: "waiting")
-        URLProtocolStub.observeRequest { request in
+        testRequestFor(url: url, data: data) { request in
             XCTAssertEqual(url, request.url)
             XCTAssertEqual("POST", request.httpMethod)
             XCTAssertNotNil(request.httpBodyStream)
-            expectation.fulfill()
         }
-        wait(for: [expectation])
     }
 
     func test_post_shouldMakeRequestWithNoData() {
-        let sut = makeSUT()
-        sut.post(to: makeURL(), with: nil)
-
-        let expectation = expectation(description: "waiting")
-        URLProtocolStub.observeRequest { request in
+        let url = makeURL()
+        testRequestFor(url: url, data: nil) { request in
             XCTAssertNil(request.httpBodyStream)
-            expectation.fulfill()
         }
-        wait(for: [expectation])
     }
 }
 
@@ -40,5 +28,20 @@ extension URLSessionAdapterTests {
         configuration.protocolClasses = [URLProtocolStub.self]
         let session = URLSession(configuration: configuration)
         return URLSessionAdapter(session: session)
+    }
+
+    private func testRequestFor(
+        url: URL,
+        data: Data?,
+        action: @escaping (URLRequest) -> Void
+    ) {
+        let sut = makeSUT()
+        sut.post(to: url, with: data)
+        let expectation = expectation(description: "waiting")
+        URLProtocolStub.observeRequest { request in
+            action(request)
+            expectation.fulfill()
+        }
+        wait(for: [expectation])
     }
 }
