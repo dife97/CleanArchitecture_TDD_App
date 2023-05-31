@@ -18,6 +18,24 @@ final class URLSessionAdapterTests: XCTestCase {
             XCTAssertNil(request.httpBodyStream)
         }
     }
+
+    func test_post_should_complete_with_error_when_request_completes_with_error() throws {
+        let sut = makeSUT()
+
+        URLProtocolStub.simulate(data: nil, response: nil, error: makeError())
+
+        let expectation = expectation(description: "wait")
+        sut.post(to: try makeURL(), with: makeValidData()) { result in
+            switch result {
+            case .success:
+                XCTFail("Expected error and got \(result) instead.")
+            case .failure(let failure):
+                XCTAssertEqual(failure, .noConnectivity)
+            }
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1)
+    }
 }
 
 extension URLSessionAdapterTests {
@@ -42,7 +60,7 @@ extension URLSessionAdapterTests {
         action: @escaping (URLRequest) -> Void
     ) {
         let sut = makeSUT()
-        sut.post(to: url, with: data)
+        sut.post(to: url, with: data) { _ in }
         let expectation = expectation(description: "waiting")
         URLProtocolStub.observeRequest { request in
             action(request)

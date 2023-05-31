@@ -23,4 +23,8 @@ extension XCTestCase {
     func makeURL() throws -> URL {
         try XCTUnwrap(URL(string: "any-url.com"))
     }
+
+    func makeError() -> Error {
+        NSError(domain: "any_error", code: 0)
+    }
 }
