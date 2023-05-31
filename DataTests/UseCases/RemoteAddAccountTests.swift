@@ -77,8 +77,8 @@ extension RemoteAddAccountTests {
             httpClient: httpClient
         )
 
-        checkMemoryLeak(for: sut, file, line)
-        checkMemoryLeak(for: httpClient, file, line)
+        checkMemoryLeak(for: sut, file: file, line: line)
+        checkMemoryLeak(for: httpClient, file: file, line: line)
 
         return (sut, httpClient)
     }

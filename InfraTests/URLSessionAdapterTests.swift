@@ -32,7 +32,7 @@ extension URLSessionAdapterTests {
         let session = URLSession(configuration: configuration)
         let sut = URLSessionAdapter(session: session)
 
-        checkMemoryLeak(for: sut, file, line)
+        checkMemoryLeak(for: sut, file: file, line: line)
 
         return sut
     }
