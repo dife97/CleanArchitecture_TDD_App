@@ -4,11 +4,8 @@ import Infra
 final class URLSessionAdapterTests: XCTestCase {
 
     func test_post_shouldMakeRequestWithValidURLAndMethod() {
+        let sut = makeSUT()
         let url = makeURL()
-        let configuration = URLSessionConfiguration.default
-        configuration.protocolClasses = [URLProtocolStub.self]
-        let session = URLSession(configuration: configuration)
-        let sut = URLSessionAdapter(session: session)
         let data = makeValidData()
 
         sut.post(to: url, with: data)
@@ -24,14 +21,8 @@ final class URLSessionAdapterTests: XCTestCase {
     }
 
     func test_post_shouldMakeRequestWithNoData() {
-        let url = makeURL()
-        let configuration = URLSessionConfiguration.default
-        configuration.protocolClasses = [URLProtocolStub.self]
-        let session = URLSession(configuration: configuration)
-        let sut = URLSessionAdapter(session: session)
-        let data = makeValidData()
-
-        sut.post(to: url, with: nil)
+        let sut = makeSUT()
+        sut.post(to: makeURL(), with: nil)
 
         let expectation = expectation(description: "waiting")
         URLProtocolStub.observeRequest { request in
@@ -39,5 +30,15 @@ final class URLSessionAdapterTests: XCTestCase {
             expectation.fulfill()
         }
         wait(for: [expectation])
+    }
+}
+
+extension URLSessionAdapterTests {
+
+    private func makeSUT() -> URLSessionAdapter {
+        let configuration = URLSessionConfiguration.default
+        configuration.protocolClasses = [URLProtocolStub.self]
+        let session = URLSession(configuration: configuration)
+        return URLSessionAdapter(session: session)
     }
 }
