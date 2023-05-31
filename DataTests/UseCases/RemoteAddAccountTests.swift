@@ -4,8 +4,8 @@ import Data
 
 final class RemoteAddAccountTests: XCTestCase {
 
-    func test_add_should_call_httpClient_with_correct_url() {
-        let url = makeURL()
+    func test_add_should_call_httpClient_with_correct_url() throws {
+        let url = try makeURL()
         let (sut, httpClient) = makeSUT(url: url)
 
         sut.add(account: makeAddAccountRequestModel()) { _ in }
@@ -47,10 +47,10 @@ final class RemoteAddAccountTests: XCTestCase {
         })
     }
 
-    func test_add_should_not_complete_if_sut_has_been_deallocated() {
+    func test_add_should_not_complete_if_sut_has_been_deallocated() throws {
         let httpClient = HTTPClientSpy()
         var sut: RemoteAddAccount? = RemoteAddAccount(
-            url: makeURL(),
+            url: try makeURL(),
             httpClient: httpClient
         )
         var result: Result<AddAccountModel.Response, DomainError>?

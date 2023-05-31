@@ -219,8 +219,8 @@
 		9490D03729D270E600F177F0 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
-				947ECA1929DA2273001D8B12 /* Helpers */,
 				9490D05229D27CD100F177F0 /* UseCases */,
+				947ECA1929DA2273001D8B12 /* Helpers */,
 				9490D05329D27CE100F177F0 /* Resources */,
 			);
 			path = DataTests;
