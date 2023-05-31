@@ -3,7 +3,7 @@ import Infra
 
 final class URLSessionAdapterTests: XCTestCase {
 
-    func test_post_shouldMakeRequestWithValidURLAndMethod() throws {
+    func test_post_should_make_request_with_valid_url_and_method() throws {
         let url = try makeURL()
         let data = makeValidData()
         testRequestFor(url: url, data: data) { request in
@@ -13,7 +13,7 @@ final class URLSessionAdapterTests: XCTestCase {
         }
     }
 
-    func test_post_shouldMakeRequestWithNoData() throws {
+    func test_post_should_make_request_with_no_data() throws {
         testRequestFor(data: nil) { request in
             XCTAssertNil(request.httpBodyStream)
         }
