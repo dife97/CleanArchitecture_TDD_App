@@ -22,4 +22,22 @@ final class URLSessionAdapterTests: XCTestCase {
         }
         wait(for: [expectation])
     }
+
+    func test_post_shouldMakeRequestWithNoData() {
+        let url = makeURL()
+        let configuration = URLSessionConfiguration.default
+        configuration.protocolClasses = [URLProtocolStub.self]
+        let session = URLSession(configuration: configuration)
+        let sut = URLSessionAdapter(session: session)
+        let data = makeValidData()
+
+        sut.post(to: url, with: nil)
+
+        let expectation = expectation(description: "waiting")
+        URLProtocolStub.observeRequest { request in
+            XCTAssertNil(request.httpBodyStream)
+            expectation.fulfill()
+        }
+        wait(for: [expectation])
+    }
 }
