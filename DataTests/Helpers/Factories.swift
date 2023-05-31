@@ -16,6 +16,10 @@ extension XCTestCase {
         Data("invalid_data".utf8)
     }
 
+    func makeValidData() -> Data {
+        Data("{\"name\":\"Diego\"}".utf8)
+    }
+
     func makeURL() -> URL {
         URL(string: "any-url.com")!
     }
