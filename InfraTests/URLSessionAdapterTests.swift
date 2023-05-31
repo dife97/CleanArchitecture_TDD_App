@@ -14,7 +14,7 @@ final class URLSessionAdapterTests: XCTestCase {
     }
 
     func test_post_shouldMakeRequestWithNoData() throws {
-        testRequestFor(url: try makeURL(), data: nil) { request in
+        testRequestFor(data: nil) { request in
             XCTAssertNil(request.httpBodyStream)
         }
     }
@@ -37,7 +37,7 @@ extension URLSessionAdapterTests {
     }
 
     private func testRequestFor(
-        url: URL,
+        url: URL = URL(string: "any-url.com")!,
         data: Data?,
         action: @escaping (URLRequest) -> Void
     ) {
