@@ -23,11 +23,18 @@ final class URLSessionAdapterTests: XCTestCase {
 
 extension URLSessionAdapterTests {
 
-    private func makeSUT() -> URLSessionAdapter {
+    private func makeSUT(
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) -> URLSessionAdapter {
         let configuration = URLSessionConfiguration.default
         configuration.protocolClasses = [URLProtocolStub.self]
         let session = URLSession(configuration: configuration)
-        return URLSessionAdapter(session: session)
+        let sut = URLSessionAdapter(session: session)
+
+        checkMemoryLeak(for: sut, file, line)
+
+        return sut
     }
 
     private func testRequestFor(
