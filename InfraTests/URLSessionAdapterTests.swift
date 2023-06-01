@@ -6,7 +6,7 @@ final class URLSessionAdapterTests: XCTestCase {
     func test_post_should_make_request_with_valid_url_and_method() throws {
         let url = try makeURL()
         let data = makeValidData()
-        testRequestFor(url: url, data: data) { request in
+        try testRequestFor(url: url, data: data) { request in
             XCTAssertEqual(url, request.url)
             XCTAssertEqual("POST", request.httpMethod)
             XCTAssertNotNil(request.httpBodyStream)
@@ -14,7 +14,7 @@ final class URLSessionAdapterTests: XCTestCase {
     }
 
     func test_post_should_make_request_with_no_data() throws {
-        testRequestFor(data: nil) { request in
+        try testRequestFor(url: try makeURL(), data: nil) { request in
             XCTAssertNil(request.httpBodyStream)
         }
     }
@@ -55,17 +55,20 @@ extension URLSessionAdapterTests {
     }
 
     private func testRequestFor(
-        url: URL = URL(string: "any-url.com")!,
+        url: URL,
         data: Data?,
         action: @escaping (URLRequest) -> Void
-    ) {
+    ) throws {
         let sut = makeSUT()
-        sut.post(to: url, with: data) { _ in }
         let expectation = expectation(description: "waiting")
-        URLProtocolStub.observeRequest { request in
-            action(request)
-            expectation.fulfill()
-        }
-        wait(for: [expectation])
+        var request: URLRequest?
+
+        sut.post(to: url, with: data) { _ in expectation.fulfill() }
+
+        URLProtocolStub.observeRequest { request = $0 }
+
+        wait(for: [expectation], timeout: 1)
+        
+        action(try XCTUnwrap(request))
     }
 }

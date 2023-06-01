@@ -19,7 +19,7 @@ public final class URLSessionAdapter {
         request.httpBody = data
 
         session.dataTask(with: request) { data, response, error in
-            if let error {
+            if error != nil {
                 onComplete(.failure(.noConnectivity))
             }
         }.resume()
