@@ -95,6 +95,7 @@
 		947ECA1729DA0E57001D8B12 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		947ECA1A29DA229F001D8B12 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
 		947ECA1C29DA2315001D8B12 /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
+		9486FF592A2A1D9D00E42F84 /* Infra.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Infra.xctestplan; sourceTree = "<group>"; };
 		9490D01B29D26E9200F177F0 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9490D02229D26F5600F177F0 /* AddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccount.swift; sourceTree = "<group>"; };
 		9490D02429D2705F00F177F0 /* AddAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountModel.swift; sourceTree = "<group>"; };
@@ -320,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				9419F6632A298E7600BBA61D /* HTTP */,
+				9486FF592A2A1D9D00E42F84 /* Infra.xctestplan */,
 			);
 			path = InfraTests;
 			sourceTree = "<group>";

@@ -1,0 +1,26 @@
+{
+  "configurations" : [
+    {
+      "id" : "713D5A2B-4911-4A6D-8DE7-6156D4777B81",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "testExecutionOrdering" : "random",
+    "threadSanitizerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:CleanArchitecture_TDD_App.xcodeproj",
+        "identifier" : "94D5EF8329DA298200F130AA",
+        "name" : "InfraTests"
+      }
+    }
+  ],
+  "version" : 1
+}
