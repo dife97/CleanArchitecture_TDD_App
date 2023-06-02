@@ -1,0 +1,26 @@
+{
+  "configurations" : [
+    {
+      "id" : "970EBDDB-37DC-49D8-A7F6-CB83E90BD339",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:CleanArchitecture_TDD_App.xcodeproj",
+        "identifier" : "94F9FD2C2A2A392400708E72",
+        "name" : "UseCasesIntegrationTests"
+      }
+    }
+  ],
+  "version" : 1
+}

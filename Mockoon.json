@@ -1,0 +1,78 @@
+{
+  "uuid": "22a9e7f0-13d3-4bb4-ba09-4de81e7c0f59",
+  "lastMigration": 27,
+  "name": "Mockoon",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "07bf4f19-8890-482a-9761-a45b746cdfdd",
+      "type": "http",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "api/signup",
+      "responses": [
+        {
+          "uuid": "359799ee-4446-404f-95d4-dbd46050f4b7",
+          "body": "{\n  \"id\": \"4829104-83921-FDSJAKFS89103N1-3213\",\n  \"name\": \"Diego Ferreira\",\n  \"email\": \"diferodrigues@gmail.com\",\n  \"password\": \"any_passoword\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "07bf4f19-8890-482a-9761-a45b746cdfdd"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": []
+}

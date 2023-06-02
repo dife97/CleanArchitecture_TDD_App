@@ -1,7 +1,7 @@
 public enum AddAccountModel {
     public struct Request: Model {
-        let name: String
-        let email: String
+        public let name: String
+        public let email: String
         let password: String
         let passwordConfirmation: String
 
@@ -19,9 +19,9 @@ public enum AddAccountModel {
     }
 
     public struct Response: Model {
-        let id: String
-        let name: String
-        let email: String
+        public let id: String
+        public let name: String
+        public let email: String
         let password: String
 
         public init(
