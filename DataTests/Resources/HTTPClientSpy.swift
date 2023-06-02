@@ -5,9 +5,9 @@ class HTTPClientSpy: HTTPPostClient {
 
     var urls: [URL] = []
     var data: Data?
-    var onComplete: ((Result<Data, HTTPError>) -> Void)?
+    var onComplete: ((Result<Data?, HTTPError>) -> Void)?
 
-    func post(to url: URL, with data: Data?, onComplete: @escaping (Result<Data, HTTPError>) -> Void) {
+    func post(to url: URL, with data: Data?, onComplete: @escaping (Result<Data?, HTTPError>) -> Void) {
         self.urls.append(url)
         self.data = data
         self.onComplete = onComplete
