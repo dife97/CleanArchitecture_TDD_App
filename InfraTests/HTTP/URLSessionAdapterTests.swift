@@ -29,6 +29,7 @@ final class URLSessionAdapterTests: XCTestCase {
         try expectResult(.failure(.noConnectivity), when: (data: makeValidData(), response: nil, error: makeError()))
         try expectResult(.failure(.noConnectivity), when: (data: makeValidData(), response: nil, error: nil))
         try expectResult(.failure(.noConnectivity), when: (data: nil, response: makeHTTPResponse(), error: makeError()))
+
         try expectResult(.failure(.noConnectivity), when: (data: nil, response: makeHTTPResponse(), error: nil))
         try expectResult(.failure(.noConnectivity), when: (data: nil, response: nil, error: nil))
     }
@@ -45,6 +46,8 @@ final class URLSessionAdapterTests: XCTestCase {
     }
 
     func test_post_should_complete_with_error_when_request_completes_with_non_200() throws {
+        try expectResult(.failure(.noConnectivity), when: (data: makeValidData(), response: makeHTTPResponse(statusCode: 100), error: nil))
+        try expectResult(.failure(.noConnectivity), when: (data: makeValidData(), response: makeHTTPResponse(statusCode: 300), error: nil))
         try expectResult(.failure(.badRequest), when: (data: makeValidData(), response: makeHTTPResponse(statusCode: 400), error: nil))
         try expectResult(.failure(.unauthorized), when: (data: makeValidData(), response: makeHTTPResponse(statusCode: 401), error: nil))
         try expectResult(.failure(.forbidden), when: (data: makeValidData(), response: makeHTTPResponse(statusCode: 403), error: nil))

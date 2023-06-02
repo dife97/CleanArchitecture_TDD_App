@@ -40,9 +40,6 @@ public final class URLSessionAdapter: HTTPPostClient {
                     case 200...299:
                         onComplete(.success(data))
 
-                    case 300...399:
-                        onComplete(.failure(.noConnectivity))
-
                     case 401:
                         onComplete(.failure(.unauthorized))
 
@@ -58,8 +55,6 @@ public final class URLSessionAdapter: HTTPPostClient {
                     default:
                         onComplete(.failure(.noConnectivity))
                     }
-                } else {
-                    onComplete(.failure(.noConnectivity))
                 }
             } else {
                 onComplete(.failure(.noConnectivity))
