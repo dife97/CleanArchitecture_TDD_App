@@ -89,6 +89,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		942F9A2A2A2A2D1100C27B8A /* CI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI.xctestplan; sourceTree = "<group>"; };
 		943C9B012A2682EB00551354 /* URLSessionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAdapter.swift; sourceTree = "<group>"; };
 		943C9B032A26832B00551354 /* URLSessionAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAdapterTests.swift; sourceTree = "<group>"; };
 		943C9B052A268BFC00551354 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
@@ -172,6 +173,14 @@
 			path = HTTP;
 			sourceTree = "<group>";
 		};
+		942F9A2B2A2A2D4E00C27B8A /* CI */ = {
+			isa = PBXGroup;
+			children = (
+				942F9A2A2A2A2D1100C27B8A /* CI.xctestplan */,
+			);
+			path = CI;
+			sourceTree = "<group>";
+		};
 		947ECA1629DA0E49001D8B12 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +206,7 @@
 				9490D03729D270E600F177F0 /* DataTests */,
 				94D5EF7A29DA296800F130AA /* Infra */,
 				94D5EF8529DA298200F130AA /* InfraTests */,
+				942F9A2B2A2A2D4E00C27B8A /* CI */,
 				9490D00029D26DF600F177F0 /* Products */,
 				9490D04029D2712100F177F0 /* Frameworks */,
 			);

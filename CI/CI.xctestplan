@@ -1,0 +1,51 @@
+{
+  "configurations" : [
+    {
+      "id" : "E25441EE-0F5A-4B88-BCBC-86F64B3683CE",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:CleanArchitecture_TDD_App.xcodeproj",
+          "identifier" : "9490D01A29D26E9200F177F0",
+          "name" : "Domain"
+        },
+        {
+          "containerPath" : "container:CleanArchitecture_TDD_App.xcodeproj",
+          "identifier" : "9490D02A29D270D500F177F0",
+          "name" : "Data"
+        },
+        {
+          "containerPath" : "container:CleanArchitecture_TDD_App.xcodeproj",
+          "identifier" : "94D5EF7829DA296800F130AA",
+          "name" : "Infra"
+        }
+      ]
+    },
+    "testExecutionOrdering" : "random",
+    "threadSanitizerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:CleanArchitecture_TDD_App.xcodeproj",
+        "identifier" : "9490D03529D270E600F177F0",
+        "name" : "DataTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:CleanArchitecture_TDD_App.xcodeproj",
+        "identifier" : "94D5EF8329DA298200F130AA",
+        "name" : "InfraTests"
+      }
+    }
+  ],
+  "version" : 1
+}
