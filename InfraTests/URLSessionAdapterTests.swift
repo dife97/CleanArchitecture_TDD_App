@@ -1,6 +1,6 @@
 import XCTest
-import Infra
 import Data
+import Infra
 
 final class URLSessionAdapterTests: XCTestCase {
 

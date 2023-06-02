@@ -154,6 +154,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9419F6622A298E1B00BBA61D /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				943C9B012A2682EB00551354 /* URLSessionAdapter.swift */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
 		947ECA1629DA0E49001D8B12 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,7 +302,7 @@
 		94D5EF7A29DA296800F130AA /* Infra */ = {
 			isa = PBXGroup;
 			children = (
-				943C9B012A2682EB00551354 /* URLSessionAdapter.swift */,
+				9419F6622A298E1B00BBA61D /* HTTP */,
 			);
 			path = Infra;
 			sourceTree = "<group>";
