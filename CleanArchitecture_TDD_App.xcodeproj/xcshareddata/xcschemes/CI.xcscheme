@@ -85,7 +85,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:CI.xctestplan"
+            reference = "container:CI/CI.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
