@@ -162,6 +162,15 @@
 			path = HTTP;
 			sourceTree = "<group>";
 		};
+		9419F6632A298E7600BBA61D /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				943C9B032A26832B00551354 /* URLSessionAdapterTests.swift */,
+				943C9B052A268BFC00551354 /* URLProtocolStub.swift */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
 		947ECA1629DA0E49001D8B12 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,8 +319,7 @@
 		94D5EF8529DA298200F130AA /* InfraTests */ = {
 			isa = PBXGroup;
 			children = (
-				943C9B032A26832B00551354 /* URLSessionAdapterTests.swift */,
-				943C9B052A268BFC00551354 /* URLProtocolStub.swift */,
+				9419F6632A298E7600BBA61D /* HTTP */,
 			);
 			path = InfraTests;
 			sourceTree = "<group>";
