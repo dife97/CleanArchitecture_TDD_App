@@ -71,69 +71,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8E65C31C-2678-487C-B11C-EAEF0F6401F6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Data/UseCases/RemoteAddAccount.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "add(account:onComplete:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8E65C31C-2678-487C-B11C-EAEF0F6401F6 - ec359521966edca4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;Foundation.Data&gt;, Data.HTTPError&gt;) -&gt; () in Data.RemoteAddAccount.add(account: Domain.AddAccountModel.Request, onComplete: (Swift.Result&lt;Domain.AddAccountModel.Response, Domain.DomainError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Data"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/diegoferreirarodrigues/Documents/Projects/CleanArchitecture_TDD_App/Data/UseCases/RemoteAddAccount.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "780">
-               </Location>
-               <Location
-                  uuid = "8E65C31C-2678-487C-B11C-EAEF0F6401F6 - ec359521966edca4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;Foundation.Data&gt;, Data.HTTPError&gt;) -&gt; () in Data.RemoteAddAccount.add(account: Domain.AddAccountModel.Request, onComplete: (Swift.Result&lt;Domain.AddAccountModel.Response, Domain.DomainError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Data"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/diegoferreirarodrigues/Documents/Projects/CleanArchitecture_TDD_App/Data/UseCases/RemoteAddAccount.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "816">
-               </Location>
-               <Location
-                  uuid = "8E65C31C-2678-487C-B11C-EAEF0F6401F6 - ec359521966edca4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;Foundation.Data&gt;, Data.HTTPError&gt;) -&gt; () in Data.RemoteAddAccount.add(account: Domain.AddAccountModel.Request, onComplete: (Swift.Result&lt;Domain.AddAccountModel.Response, Domain.DomainError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Data"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/diegoferreirarodrigues/Documents/Projects/CleanArchitecture_TDD_App/Data/UseCases/RemoteAddAccount.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "652">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "D99DCE37-901E-46AE-B4D2-B8E485AE3270"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -288,22 +225,6 @@
             startingLineNumber = "60"
             endingLineNumber = "60"
             landmarkName = "post(to:with:onComplete:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "048FEB1E-134F-4E35-895B-54690CFD0720"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Data/UseCases/RemoteAddAccount.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "add(account:onComplete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

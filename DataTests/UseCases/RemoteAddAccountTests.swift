@@ -26,7 +26,7 @@ final class RemoteAddAccountTests: XCTestCase {
         let (sut, httpClient) = makeSUT()
 
         expect(sut, completeWith: .failure(.unexpected), when: {
-            httpClient.completeWithError(.noConnectivity)
+            httpClient.completeWithError(.badRequest)
         })
     }
 
@@ -43,7 +43,7 @@ final class RemoteAddAccountTests: XCTestCase {
         let account = makeAccountResponseModel()
 
         expect(sut, completeWith: .success(account), when: {
-            httpClient.completeWithData(account.toData()!)
+            httpClient.completeWithData(account.toData())
         })
     }
 
