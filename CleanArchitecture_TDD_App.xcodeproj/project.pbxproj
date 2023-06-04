@@ -136,7 +136,7 @@
 		94D5EF8429DA298200F130AA /* InfraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94F9FD2D2A2A392400708E72 /* UseCasesIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UseCasesIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94F9FD2F2A2A392400708E72 /* AddAccountIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountIntegrationTests.swift; sourceTree = "<group>"; };
-		94F9FD3B2A2A3CAC00708E72 /* UseCasesIntegrationTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = UseCasesIntegrationTests.xctestplan; path = UseCasesIntegrationTests/UseCasesIntegrationTests.xctestplan; sourceTree = "<group>"; };
+		94F9FD3B2A2A3CAC00708E72 /* UseCasesIntegrationTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UseCasesIntegrationTests.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,7 +235,6 @@
 		9490CFF629D26DF600F177F0 = {
 			isa = PBXGroup;
 			children = (
-				94F9FD3B2A2A3CAC00708E72 /* UseCasesIntegrationTests.xctestplan */,
 				9490D01C29D26E9200F177F0 /* Domain */,
 				9490D02C29D270D500F177F0 /* Data */,
 				9490D03729D270E600F177F0 /* DataTests */,
@@ -377,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				94F9FD2F2A2A392400708E72 /* AddAccountIntegrationTests.swift */,
+				94F9FD3B2A2A3CAC00708E72 /* UseCasesIntegrationTests.xctestplan */,
 			);
 			path = UseCasesIntegrationTests;
 			sourceTree = "<group>";
