@@ -30,6 +30,14 @@ final class RemoteAddAccountTests: XCTestCase {
         })
     }
 
+    func test_add_should_complete_with_connectivity_error() {
+        let (sut, httpClient) = makeSUT()
+
+        expect(sut, completeWith: .failure(.noConnectivity), when: {
+            httpClient.completeWithError(.noConnectivity)
+        })
+    }
+
     func test_add_should_complete_with_account_if_client_completes_with_validData() {
         let (sut, httpClient) = makeSUT()
         let account = makeAccountResponseModel()

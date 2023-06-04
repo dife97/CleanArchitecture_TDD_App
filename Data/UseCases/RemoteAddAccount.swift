@@ -26,8 +26,13 @@ public final class RemoteAddAccount: AddAccount {
                     onComplete(.failure(.unexpected))
                 }
 
-            case .failure:
-                onComplete(.failure(.unexpected))
+            case .failure(let error):
+
+                if error == .noConnectivity {
+                    onComplete(.failure(.noConnectivity))
+                } else {
+                    onComplete(.failure(.unexpected))
+                }
             }
         }
     }
