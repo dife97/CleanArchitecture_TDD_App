@@ -34,7 +34,10 @@ public final class SignUpPresenter {
                 case .success:
                     break
                 case .failure:
-                    self.alertView.showMessage(viewModel: AlertViewModel(title: "Erro", message: "Algo inesperado aconteceu, tente novamente em alguns instantes"))
+                    self.alertView.showMessage(viewModel: AlertViewModel(
+                        title: "Erro",
+                        message: "Algo inesperado aconteceu, tente novamente em alguns instantes"
+                    ))
                 }
             }
         }
