@@ -27,7 +27,16 @@ public final class SignUpPresenter {
                 passwordConfirmation: viewModel.passwordConfirmation ?? ""
             )
 
-            addAccount.add(account: addAccountModel) { _ in }
+            addAccount.add(account: addAccountModel) { result in
+//                guard let self else { return }
+
+                switch result {
+                case .success:
+                    break
+                case .failure:
+                    self.alertView.showMessage(viewModel: AlertViewModel(title: "Erro", message: "Algo inesperado aconteceu, tente novamente em alguns instantes"))
+                }
+            }
         }
     }
 
