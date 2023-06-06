@@ -448,6 +448,27 @@
 			path = InfraTests;
 			sourceTree = "<group>";
 		};
+		94E885A12A2FF70B0031E523 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				94EEB44A2A2EB33500634791 /* SignUpPresenter.swift */,
+				94EEB4512A2EB38300634791 /* SignUpViewModel.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		94E885A22A2FF72A0031E523 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				94EEB4412A2EAAEC00634791 /* SignUpPresenterTests.swift */,
+				94EEB45A2A2EB59300634791 /* AlertViewSpy.swift */,
+				94EEB4602A2EC20300634791 /* EmailValidatorSpy.swift */,
+				94D141552A2EC36C0039EBF3 /* AddAccountSpy.swift */,
+				94E8859F2A2FF0210031E523 /* LoadingViewSpy.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		94EEB4362A2EAAEC00634791 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,8 +501,7 @@
 		94EEB4582A2EB40200634791 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				94EEB44A2A2EB33500634791 /* SignUpPresenter.swift */,
-				94EEB4512A2EB38300634791 /* SignUpViewModel.swift */,
+				94E885A12A2FF70B0031E523 /* SignUp */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -489,11 +509,7 @@
 		94EEB45C2A2EB5BC00634791 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				94EEB4412A2EAAEC00634791 /* SignUpPresenterTests.swift */,
-				94EEB45A2A2EB59300634791 /* AlertViewSpy.swift */,
-				94EEB4602A2EC20300634791 /* EmailValidatorSpy.swift */,
-				94D141552A2EC36C0039EBF3 /* AddAccountSpy.swift */,
-				94E8859F2A2FF0210031E523 /* LoadingViewSpy.swift */,
+				94E885A22A2FF72A0031E523 /* SignUp */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
