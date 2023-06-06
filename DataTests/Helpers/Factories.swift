@@ -3,10 +3,19 @@ import Domain
 
 extension XCTestCase {
 
+    func makeAddAccountRequestModel() -> AddAccountModel.Request {
+        AddAccountModel.Request(
+            name: "Any Name",
+            email: "anyEmail@email.com",
+            password: "anyPassword",
+            passwordConfirmation: "anyPassword"
+        )
+    }
+
     func makeAccountResponseModel() -> AddAccountModel.Response {
         AddAccountModel.Response(
             id: "anyID",
-            name: "anyName",
+            name: "Any Name",
             email: "anyEmail@email.com",
             password: "anyPassword"
         )

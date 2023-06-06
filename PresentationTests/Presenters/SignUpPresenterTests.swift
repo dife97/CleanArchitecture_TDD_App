@@ -1,4 +1,5 @@
 import XCTest
+import Domain
 import Presentation
 
 final class SignUpPresenterTests: XCTestCase {
@@ -68,15 +69,29 @@ final class SignUpPresenterTests: XCTestCase {
 
         XCTAssertEqual(emailValidatorSpy.email, signUpViewModel.email)
     }
+
+    func test_signUp_should_call_addAccount_with_correct_data() {
+        let addAccountSpy = AddAccountSpy()
+        let sut = makeSUT(addAccount: addAccountSpy)
+
+        sut.signUp(viewModel: makeSignUpViewModel())
+
+        XCTAssertEqual(addAccountSpy.addAccountModel, makeAddAccountRequestModel())
+    }
 }
 
 extension SignUpPresenterTests {
 
     private func makeSUT(
         alertView: AlertViewSpy = AlertViewSpy(),
-        emailValidator: EmailValidatorSpy = EmailValidatorSpy()
+        emailValidator: EmailValidatorSpy = EmailValidatorSpy(),
+        addAccount: AddAccountSpy = AddAccountSpy()
     ) -> SignUpPresenter {
-        SignUpPresenter(alertView: alertView, emailValidator: emailValidator)
+        SignUpPresenter(
+            alertView: alertView,
+            emailValidator: emailValidator,
+            addAccount: addAccount
+        )
     }
 
     private func makeSignUpViewModel(

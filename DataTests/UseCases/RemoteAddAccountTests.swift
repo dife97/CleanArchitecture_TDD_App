@@ -123,13 +123,4 @@ extension RemoteAddAccountTests {
         action()
         wait(for: [exp], timeout: 1)
     }
-
-    private func makeAddAccountRequestModel() -> AddAccountModel.Request {
-        AddAccountModel.Request(
-            name: "anyName",
-            email: "anyEmail@email.com",
-            password: "anyPassword",
-            passwordConfirmation: "anyPassword"
-        )
-    }
 }
