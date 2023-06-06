@@ -38,7 +38,9 @@ public final class SignUpPresenter {
             return "Falha ao confirmar senha"
         }
 
-        _ = emailValidator.isValid(email: viewModel.email!)
+        else if !emailValidator.isValid(email: viewModel.email!) {
+            return "E-mail inválido"
+        }
         
         return nil
     }
