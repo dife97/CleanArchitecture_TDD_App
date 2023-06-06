@@ -31,7 +31,7 @@ public final class SignUpPresenter {
             )
 
             loadingView.display(viewModel: LoadingViewModel(isLoading: true))
-            
+
             addAccount.add(account: addAccountModel) { [weak self] result in
                 guard let self else { return }
 
