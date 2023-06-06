@@ -4,7 +4,7 @@ import Presentation
 final class SignUpPresenterTests: XCTestCase {
 
     func test_signUp_should_show_error_message_if_name_is_not_provided() {
-        let (sut, alertViewSpy) = makeSUT()
+        let (sut, alertViewSpy, _) = makeSUT()
         let signUpViewModel = SignUpViewModel(
             name: nil,
             email: "anyEmail@email.com",
@@ -18,7 +18,7 @@ final class SignUpPresenterTests: XCTestCase {
     }
 
     func test_signUp_should_show_error_message_if_email_is_not_provided() {
-        let (sut, alertViewSpy) = makeSUT()
+        let (sut, alertViewSpy, _) = makeSUT()
         let signUpViewModel = SignUpViewModel(
             name: "Any Name",
             email: nil,
@@ -32,7 +32,7 @@ final class SignUpPresenterTests: XCTestCase {
     }
 
     func test_signUp_should_show_error_message_if_password_is_not_provided() {
-        let (sut, alertViewSpy) = makeSUT()
+        let (sut, alertViewSpy, _) = makeSUT()
         let signUpViewModel = SignUpViewModel(
             name: "Any Name",
             email: "anyEmail@email.com",
@@ -46,7 +46,7 @@ final class SignUpPresenterTests: XCTestCase {
     }
 
     func test_signUp_should_show_error_message_if_password_confirmation_is_not_provided() {
-        let (sut, alertViewSpy) = makeSUT()
+        let (sut, alertViewSpy, _) = makeSUT()
         let signUpViewModel = SignUpViewModel(
             name: "Any Name",
             email: "anyEmail@email.com",
@@ -60,7 +60,7 @@ final class SignUpPresenterTests: XCTestCase {
     }
 
     func test_signUp_should_show_error_message_if_password_confirmation_is_not_match() {
-        let (sut, alertViewSpy) = makeSUT()
+        let (sut, alertViewSpy, _) = makeSUT()
         let signUpViewModel = SignUpViewModel(
             name: "Any Name",
             email: "anyEmail@email.com",
@@ -72,14 +72,39 @@ final class SignUpPresenterTests: XCTestCase {
 
         XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Falha na validação", message: "Falha ao confirmar senha"))
     }
+
+    func test_signUp_should_call_emailValidator_with_correct_email() {
+        let (sut, _, emailValidatorSpy) = makeSUT()
+        let signUpViewModel = SignUpViewModel(
+            name: "Any Name",
+            email: "invalid_email@email.com",
+            password: "anyPassword",
+            passwordConfirmation: "anyPassword"
+        )
+
+        sut.signUp(viewModel: signUpViewModel)
+
+        XCTAssertEqual(emailValidatorSpy.email, signUpViewModel.email)
+    }
 }
 
 extension SignUpPresenterTests {
 
-    private func makeSUT() -> (SignUpPresenter, AlertViewSpy) {
+    private func makeSUT() -> (SignUpPresenter, AlertViewSpy, EmailValidatorSpy) {
         let alertViewSpy = AlertViewSpy()
-        let sut = SignUpPresenter(alertView: alertViewSpy)
+        let emailValidatorSpy = EmailValidatorSpy()
+        let sut = SignUpPresenter(alertView: alertViewSpy, emailValidator: emailValidatorSpy)
 
-        return (sut, alertViewSpy)
+        return (sut, alertViewSpy, emailValidatorSpy)
+    }
+}
+
+class EmailValidatorSpy: EmailValidator {
+
+    var isValid = true
+    private(set) var email: String?
+    func isValid(email: String) -> Bool {
+        self.email = email
+        return isValid
     }
 }

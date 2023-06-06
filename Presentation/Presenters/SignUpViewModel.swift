@@ -1,6 +1,6 @@
 public struct SignUpViewModel {
     let name: String?
-    let email: String?
+    public let email: String?
     let password: String?
     let passwordConfirmation: String?
 
