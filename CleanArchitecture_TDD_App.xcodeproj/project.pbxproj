@@ -36,6 +36,7 @@
 		94D5EF9529DA2B3B00F130AA /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947ECA1C29DA2315001D8B12 /* Factories.swift */; };
 		94D5EF9629DA2B8300F130AA /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947ECA1A29DA229F001D8B12 /* XCTestCase+Extension.swift */; };
 		94E885A02A2FF0210031E523 /* LoadingViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E8859F2A2FF0210031E523 /* LoadingViewSpy.swift */; };
+		94E885A42A2FF7730031E523 /* SignUpMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E885A32A2FF7730031E523 /* SignUpMapper.swift */; };
 		94EEB43D2A2EAAEC00634791 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EEB4352A2EAAEC00634791 /* Presentation.framework */; };
 		94EEB4422A2EAAEC00634791 /* SignUpPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EEB4412A2EAAEC00634791 /* SignUpPresenterTests.swift */; };
 		94EEB44B2A2EB33500634791 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EEB44A2A2EB33500634791 /* SignUpPresenter.swift */; };
@@ -180,6 +181,7 @@
 		94D5EF7929DA296800F130AA /* Infra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Infra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D5EF8429DA298200F130AA /* InfraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E8859F2A2FF0210031E523 /* LoadingViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewSpy.swift; sourceTree = "<group>"; };
+		94E885A32A2FF7730031E523 /* SignUpMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMapper.swift; sourceTree = "<group>"; };
 		94EEB4352A2EAAEC00634791 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EEB43C2A2EAAEC00634791 /* PresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EEB4412A2EAAEC00634791 /* SignUpPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenterTests.swift; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 			isa = PBXGroup;
 			children = (
 				94EEB44A2A2EB33500634791 /* SignUpPresenter.swift */,
+				94E885A32A2FF7730031E523 /* SignUpMapper.swift */,
 				94EEB4512A2EB38300634791 /* SignUpViewModel.swift */,
 			);
 			path = SignUp;
@@ -902,6 +905,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94E885A42A2FF7730031E523 /* SignUpMapper.swift in Sources */,
 				94EEB4542A2EB3B800634791 /* AlertViewModel.swift in Sources */,
 				94EEB4572A2EB3E100634791 /* AlertView.swift in Sources */,
 				94EEB45F2A2EB7DC00634791 /* EmailValidator.swift in Sources */,
