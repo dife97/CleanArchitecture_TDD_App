@@ -12,4 +12,8 @@ class AddAccountSpy: AddAccount {
     func completeWithError(_ error: DomainError) {
         completion?(.failure(error))
     }
+
+    func completeWithAccount(_ account: AddAccountModel.Response) {
+        completion?(.success(account))
+    }
 }

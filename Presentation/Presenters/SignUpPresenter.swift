@@ -37,7 +37,10 @@ public final class SignUpPresenter {
 
                 switch result {
                 case .success:
-                    break
+                    self.alertView.showMessage(viewModel: AlertViewModel(
+                        title: "Sucesso",
+                        message: "Conta criada com sucesso!"
+                    ))
                 case .failure:
                     self.alertView.showMessage(viewModel: AlertViewModel(
                         title: "Erro",

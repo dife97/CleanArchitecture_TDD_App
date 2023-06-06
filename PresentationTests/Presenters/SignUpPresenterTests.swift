@@ -13,7 +13,6 @@ final class SignUpPresenterTests: XCTestCase {
             XCTAssertEqual(viewModel, self?.makeRequiredAlertViewModel(fieldName: "nome"))
             expectation.fulfill()
         }
-
         sut.signUp(viewModel: makeSignUpViewModel(name: nil))
         wait(for: [expectation], timeout: 1)
     }
@@ -27,7 +26,6 @@ final class SignUpPresenterTests: XCTestCase {
             XCTAssertEqual(viewModel, self?.makeRequiredAlertViewModel(fieldName: "email"))
             expectation.fulfill()
         }
-
         sut.signUp(viewModel: makeSignUpViewModel(email: nil))
         wait(for: [expectation], timeout: 1)
     }
@@ -41,7 +39,6 @@ final class SignUpPresenterTests: XCTestCase {
             XCTAssertEqual(viewModel, self?.makeRequiredAlertViewModel(fieldName: "senha"))
             expectation.fulfill()
         }
-
         sut.signUp(viewModel: makeSignUpViewModel(password: nil))
         wait(for: [expectation], timeout: 1)
     }
@@ -55,7 +52,6 @@ final class SignUpPresenterTests: XCTestCase {
             XCTAssertEqual(viewModel, self?.makeRequiredAlertViewModel(fieldName: "confirmar senha"))
             expectation.fulfill()
         }
-
         sut.signUp(viewModel: makeSignUpViewModel(passwordConfirmation: nil))
         wait(for: [expectation], timeout: 1)
     }
@@ -69,7 +65,6 @@ final class SignUpPresenterTests: XCTestCase {
             XCTAssertEqual(viewModel, self?.makeInvalidAlertViewModel(fieldName: "confirmar senha"))
             expectation.fulfill()
         }
-
         sut.signUp(viewModel: makeSignUpViewModel(passwordConfirmation: "wrongPassword"))
         wait(for: [expectation], timeout: 1)
     }
@@ -84,7 +79,6 @@ final class SignUpPresenterTests: XCTestCase {
             XCTAssertEqual(viewModel, self?.makeInvalidAlertViewModel(fieldName: "email"))
             expectation.fulfill()
         }
-
         emailValidatorSpy.simulateInvalidEmail()
         sut.signUp(viewModel: makeSignUpViewModel(email: "invalid_email@email.com"))
         wait(for: [expectation], timeout: 1)
@@ -119,7 +113,6 @@ final class SignUpPresenterTests: XCTestCase {
             XCTAssertEqual(viewModel, self?.makeErrorAlertViewModel(message: "Algo inesperado aconteceu, tente novamente em alguns instantes"))
             expectation.fulfill()
         }
-
         sut.signUp(viewModel: makeSignUpViewModel())
         addAccountSpy.completeWithError(.unexpected)
         wait(for: [expectation], timeout: 1)
@@ -146,6 +139,21 @@ final class SignUpPresenterTests: XCTestCase {
         }
         addAccountSpy.completeWithError(.unexpected)
         wait(for: [expectation2], timeout: 1)
+    }
+
+    func test_signUp_should_show_success_message_if_addAccount_succeeds() {
+        let alertViewSpy = AlertViewSpy()
+        let addAccountSpy = AddAccountSpy()
+        let sut = makeSUT(alertView: alertViewSpy, addAccount: addAccountSpy)
+        let expectation = expectation(description: "waiting")
+
+        alertViewSpy.observe { [weak self] viewModel in
+            XCTAssertEqual(viewModel, self?.makeSuccessAlertViewModel(message: "Conta criada com sucesso!"))
+            expectation.fulfill()
+        }
+        sut.signUp(viewModel: makeSignUpViewModel())
+        addAccountSpy.completeWithAccount(makeAccountResponseModel())
+        wait(for: [expectation], timeout: 1)
     }
 }
 
@@ -196,5 +204,9 @@ extension SignUpPresenterTests {
 
     private func makeErrorAlertViewModel(message: String) -> AlertViewModel {
         AlertViewModel(title: "Erro", message: message)
+    }
+
+    private func makeSuccessAlertViewModel(message: String) -> AlertViewModel {
+        AlertViewModel(title: "Sucesso", message: message)
     }
 }
