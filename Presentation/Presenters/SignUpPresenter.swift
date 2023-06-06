@@ -44,6 +44,7 @@ public final class SignUpPresenter {
                         message: "Algo inesperado aconteceu, tente novamente em alguns instantes"
                     ))
                 }
+                self.loadingView.display(viewModel: LoadingViewModel(isLoading: false))
             }
         }
     }
