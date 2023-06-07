@@ -1,15 +1,15 @@
 {
   "configurations" : [
     {
-      "id" : "37A07C77-BEAB-46C3-B23E-C3BDB052946E",
-      "name" : "Test Scheme Action",
+      "id" : "7904B317-85F1-4697-BA9C-95CDFD4F0DDE",
+      "name" : "Configuration 1",
       "options" : {
 
       }
     }
   ],
   "defaultOptions" : {
-    "codeCoverage" : false
+
   },
   "testTargets" : [
     {

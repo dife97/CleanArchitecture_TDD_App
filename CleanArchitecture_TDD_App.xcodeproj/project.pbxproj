@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		940484072A300AF700974601 /* SignUpStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 940484062A300AF700974601 /* SignUpStoryboard.storyboard */; };
 		943C9B022A2682EB00551354 /* URLSessionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C9B012A2682EB00551354 /* URLSessionAdapter.swift */; };
 		943C9B042A26832B00551354 /* URLSessionAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C9B032A26832B00551354 /* URLSessionAdapterTests.swift */; };
 		943C9B062A268BFC00551354 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C9B052A268BFC00551354 /* URLProtocolStub.swift */; };
@@ -42,6 +43,7 @@
 		94E885BF2A3002930031E523 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E885B02A3002790031E523 /* UI.framework */; };
 		94E885C62A3003E80031E523 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EEB4352A2EAAEC00634791 /* Presentation.framework */; platformFilters = (macos, ); };
 		94E885C72A3003E80031E523 /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94EEB4352A2EAAEC00634791 /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		94E885CC2A30065F0031E523 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E885CB2A30065F0031E523 /* SignUpViewController.swift */; };
 		94EEB43D2A2EAAEC00634791 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EEB4352A2EAAEC00634791 /* Presentation.framework */; };
 		94EEB4422A2EAAEC00634791 /* SignUpPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EEB4412A2EAAEC00634791 /* SignUpPresenterTests.swift */; };
 		94EEB44B2A2EB33500634791 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EEB44A2A2EB33500634791 /* SignUpPresenter.swift */; };
@@ -185,6 +187,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		940484062A300AF700974601 /* SignUpStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpStoryboard.storyboard; sourceTree = "<group>"; };
+		94197F2D2A30092D00DE70A2 /* UI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UI.xctestplan; sourceTree = SOURCE_ROOT; };
 		942F9A2A2A2A2D1100C27B8A /* CI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI.xctestplan; sourceTree = "<group>"; };
 		943C9B012A2682EB00551354 /* URLSessionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAdapter.swift; sourceTree = "<group>"; };
 		943C9B032A26832B00551354 /* URLSessionAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAdapterTests.swift; sourceTree = "<group>"; };
@@ -216,7 +220,7 @@
 		94E885B02A3002790031E523 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E885BB2A3002930031E523 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E885BD2A3002930031E523 /* SignUpViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerTests.swift; sourceTree = "<group>"; };
-		94E885C52A3002A80031E523 /* UI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UI.xctestplan; sourceTree = "<group>"; };
+		94E885CB2A30065F0031E523 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		94EEB4352A2EAAEC00634791 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EEB43C2A2EAAEC00634791 /* PresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EEB4412A2EAAEC00634791 /* SignUpPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenterTests.swift; sourceTree = "<group>"; };
@@ -559,6 +563,8 @@
 		94E885B12A3002790031E523 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				94E885CB2A30065F0031E523 /* SignUpViewController.swift */,
+				940484062A300AF700974601 /* SignUpStoryboard.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -567,7 +573,7 @@
 			isa = PBXGroup;
 			children = (
 				94E885BD2A3002930031E523 /* SignUpViewControllerTests.swift */,
-				94E885C52A3002A80031E523 /* UI.xctestplan */,
+				94197F2D2A30092D00DE70A2 /* UI.xctestplan */,
 			);
 			path = UITests;
 			sourceTree = "<group>";
@@ -901,6 +907,7 @@
 					};
 					94E885AF2A3002790031E523 = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 					};
 					94E885BA2A3002930031E523 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -986,6 +993,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				940484072A300AF700974601 /* SignUpStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1076,6 +1084,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94E885CC2A30065F0031E523 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1623,6 +1632,7 @@
 		94E885B52A3002790031E523 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1650,6 +1660,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1659,6 +1670,7 @@
 		94E885B62A3002790031E523 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1695,6 +1707,7 @@
 		94E885C32A3002930031E523 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P2VHV5YCL6;
@@ -1713,6 +1726,7 @@
 		94E885C42A3002930031E523 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P2VHV5YCL6;
