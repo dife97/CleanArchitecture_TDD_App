@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "37A07C77-BEAB-46C3-B23E-C3BDB052946E",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:CleanArchitecture_TDD_App.xcodeproj",
+        "identifier" : "94E885BA2A3002930031E523",
+        "name" : "UITests"
+      }
+    }
+  ],
+  "version" : 1
+}
