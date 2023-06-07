@@ -1,4 +1,6 @@
-public struct SignUpViewModel {
+import Domain
+
+public struct SignUpViewModel: Model {
     let name: String?
     public let email: String?
     let password: String?
