@@ -1,5 +1,5 @@
 public struct LoadingViewModel: Equatable {
-    let isLoading: Bool
+    public let isLoading: Bool
 
     public init(
         isLoading: Bool
