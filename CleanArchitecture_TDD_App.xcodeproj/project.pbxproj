@@ -563,8 +563,7 @@
 		94E885B12A3002790031E523 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				94E885CB2A30065F0031E523 /* SignUpViewController.swift */,
-				940484062A300AF700974601 /* SignUp.storyboard */,
+				94F2341A2A39485300E8D201 /* Scenes */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -572,7 +571,7 @@
 		94E885BC2A3002930031E523 /* UITests */ = {
 			isa = PBXGroup;
 			children = (
-				94E885BD2A3002930031E523 /* SignUpViewControllerTests.swift */,
+				94F2341B2A39485F00E8D201 /* Scenes */,
 				94197F2D2A30092D00DE70A2 /* UI.xctestplan */,
 			);
 			path = UITests;
@@ -633,6 +632,39 @@
 				94EEB45E2A2EB7DC00634791 /* EmailValidator.swift */,
 			);
 			path = Validators;
+			sourceTree = "<group>";
+		};
+		94F234182A3947EF00E8D201 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				94E885CB2A30065F0031E523 /* SignUpViewController.swift */,
+				940484062A300AF700974601 /* SignUp.storyboard */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		94F234192A39480500E8D201 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				94E885BD2A3002930031E523 /* SignUpViewControllerTests.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		94F2341A2A39485300E8D201 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				94F234182A3947EF00E8D201 /* SignUp */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		94F2341B2A39485F00E8D201 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				94F234192A39480500E8D201 /* SignUp */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		94F9FD2E2A2A392400708E72 /* UseCasesIntegrationTests */ = {
