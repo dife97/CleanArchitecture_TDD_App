@@ -15,7 +15,6 @@ final class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-
     }
 
     private func configureUI() {
@@ -38,8 +37,10 @@ extension SignUpViewController: LoadingView {
 
     func display(viewModel: LoadingViewModel) {
         if viewModel.isLoading {
+            view.isUserInteractionEnabled = false
             loadingView.startAnimating()
         } else {
+            view.isUserInteractionEnabled = true
             loadingView.stopAnimating()
         }
     }
