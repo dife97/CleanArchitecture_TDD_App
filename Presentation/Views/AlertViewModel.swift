@@ -1,6 +1,6 @@
 public struct AlertViewModel: Equatable {
-    let title: String
-    let message: String
+    public let title: String
+    public let message: String
 
     public init(
         title: String,
