@@ -1,7 +1,7 @@
 import UIKit
 import Presentation
 
-final class SignUpViewController: UIViewController {
+final class SignUpViewController: UIViewController, Storyboarded {
 
     var signUp: ((SignUpViewModel) -> Void)?
 
