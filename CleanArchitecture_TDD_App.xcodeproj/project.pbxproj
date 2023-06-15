@@ -37,6 +37,7 @@
 		948141B12A3A94570014E591 /* SignUpIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948141B02A3A94570014E591 /* SignUpIntegrationTests.swift */; };
 		948141B82A3A95860014E591 /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D141552A2EC36C0039EBF3 /* AddAccountSpy.swift */; };
 		948141B92A3A95B60014E591 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947ECA1A29DA229F001D8B12 /* XCTestCase+Extension.swift */; };
+		948141BC2A3A989C0014E591 /* WeakVarProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948141BB2A3A989C0014E591 /* WeakVarProxy.swift */; };
 		948684EA2A2ECD3B0095E0F6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948684E92A2ECD3B0095E0F6 /* LoadingView.swift */; };
 		948684EC2A2ECD890095E0F6 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948684EB2A2ECD890095E0F6 /* LoadingViewModel.swift */; };
 		9490D02329D26F5600F177F0 /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9490D02229D26F5600F177F0 /* AddAccount.swift */; };
@@ -328,6 +329,7 @@
 		948141A82A3A93160014E591 /* SignUpComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposer.swift; sourceTree = "<group>"; };
 		948141AE2A3A94570014E591 /* MainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		948141B02A3A94570014E591 /* SignUpIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIntegrationTests.swift; sourceTree = "<group>"; };
+		948141BB2A3A989C0014E591 /* WeakVarProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVarProxy.swift; sourceTree = "<group>"; };
 		948684E92A2ECD3B0095E0F6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		948684EB2A2ECD890095E0F6 /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
 		9486FF592A2A1D9D00E42F84 /* Infra.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Infra.xctestplan; sourceTree = "<group>"; };
@@ -540,6 +542,7 @@
 			children = (
 				948141A72A3A930D0014E591 /* Composers */,
 				948141A22A3A8BA20014E591 /* Factories */,
+				948141BA2A3A98930014E591 /* Proxies */,
 				948141772A3A8A420014E591 /* AppDelegate.swift */,
 				948141792A3A8A420014E591 /* SceneDelegate.swift */,
 				948141802A3A8A430014E591 /* Assets.xcassets */,
@@ -572,6 +575,14 @@
 				948141B02A3A94570014E591 /* SignUpIntegrationTests.swift */,
 			);
 			path = MainTests;
+			sourceTree = "<group>";
+		};
+		948141BA2A3A98930014E591 /* Proxies */ = {
+			isa = PBXGroup;
+			children = (
+				948141BB2A3A989C0014E591 /* WeakVarProxy.swift */,
+			);
+			path = Proxies;
 			sourceTree = "<group>";
 		};
 		9490CFF629D26DF600F177F0 = {
@@ -1459,6 +1470,7 @@
 				948141782A3A8A420014E591 /* AppDelegate.swift in Sources */,
 				948141A42A3A8BB10014E591 /* ControllerFactory.swift in Sources */,
 				9481417A2A3A8A420014E591 /* SceneDelegate.swift in Sources */,
+				948141BC2A3A989C0014E591 /* WeakVarProxy.swift in Sources */,
 				948141A92A3A93160014E591 /* SignUpComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
