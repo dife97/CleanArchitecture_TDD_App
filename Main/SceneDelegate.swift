@@ -10,8 +10,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
+        let remoteAddAccount = UseCaseFactory.makeRemoteAddAccount()
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = SignUpFactory.makeController()
+        window?.rootViewController = SignUpComposer.composeController(with: remoteAddAccount)
         window?.makeKeyAndVisible()
     }
 }
