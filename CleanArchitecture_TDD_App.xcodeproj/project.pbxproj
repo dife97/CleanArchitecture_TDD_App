@@ -35,6 +35,8 @@
 		948141A62A3A927A0014E591 /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948141A52A3A927A0014E591 /* UseCaseFactory.swift */; };
 		948141A92A3A93160014E591 /* SignUpComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948141A82A3A93160014E591 /* SignUpComposer.swift */; };
 		948141B12A3A94570014E591 /* SignUpIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948141B02A3A94570014E591 /* SignUpIntegrationTests.swift */; };
+		948141B82A3A95860014E591 /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D141552A2EC36C0039EBF3 /* AddAccountSpy.swift */; };
+		948141B92A3A95B60014E591 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947ECA1A29DA229F001D8B12 /* XCTestCase+Extension.swift */; };
 		948684EA2A2ECD3B0095E0F6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948684E92A2ECD3B0095E0F6 /* LoadingView.swift */; };
 		948684EC2A2ECD890095E0F6 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948684EB2A2ECD890095E0F6 /* LoadingViewModel.swift */; };
 		9490D02329D26F5600F177F0 /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9490D02229D26F5600F177F0 /* AddAccount.swift */; };
@@ -1465,6 +1467,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				948141B92A3A95B60014E591 /* XCTestCase+Extension.swift in Sources */,
+				948141B82A3A95860014E591 /* AddAccountSpy.swift in Sources */,
 				948141B12A3A94570014E591 /* SignUpIntegrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
