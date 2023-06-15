@@ -19,45 +19,48 @@ public final class URLSessionAdapter: HTTPPostClient {
         request.httpBody = data
 
         session.dataTask(with: request) { data, response, error in
-            if error == nil {
-                guard let response = response as? HTTPURLResponse else {
-                    onComplete(.failure(.noConnectivity))
-                    return
-                }
 
-                if let data {
-                    let statusCode = response.statusCode
-                    
-                    if data.count == 0 && statusCode != 204 {
+            DispatchQueue.main.async {
+                if error == nil {
+                    guard let response = response as? HTTPURLResponse else {
                         onComplete(.failure(.noConnectivity))
                         return
                     }
 
-                    switch statusCode {
-                    case 204:
-                        onComplete(.success(nil))
+                    if let data {
+                        let statusCode = response.statusCode
 
-                    case 200...299:
-                        onComplete(.success(data))
+                        if data.count == 0 && statusCode != 204 {
+                            onComplete(.failure(.noConnectivity))
+                            return
+                        }
 
-                    case 401:
-                        onComplete(.failure(.unauthorized))
+                        switch statusCode {
+                        case 204:
+                            onComplete(.success(nil))
 
-                    case 403:
-                        onComplete(.failure(.forbidden))
+                        case 200...299:
+                            onComplete(.success(data))
 
-                    case 400...499:
-                        onComplete(.failure(.badRequest))
+                        case 401:
+                            onComplete(.failure(.unauthorized))
 
-                    case 500...599:
-                        onComplete(.failure(.serverError))
+                        case 403:
+                            onComplete(.failure(.forbidden))
 
-                    default:
-                        onComplete(.failure(.noConnectivity))
+                        case 400...499:
+                            onComplete(.failure(.badRequest))
+
+                        case 500...599:
+                            onComplete(.failure(.serverError))
+
+                        default:
+                            onComplete(.failure(.noConnectivity))
+                        }
                     }
+                } else {
+                    onComplete(.failure(.noConnectivity))
                 }
-            } else {
-                onComplete(.failure(.noConnectivity))
             }
         }.resume()
     }
