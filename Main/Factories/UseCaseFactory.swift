@@ -5,14 +5,18 @@ import Infra
 
 final class UseCaseFactory {
 
-    static func makeRemoteAddAccount() -> AddAccount {
-        let url = URL(string: "https://clean-node-api.herokuapp.com/api/signup")!
-        let urlSessionAdapter = URLSessionAdapter()
-        let remoteAddAccount = RemoteAddAccount(
-            url: url,
-            httpClient: urlSessionAdapter
-        )
+    private static let httpClient = URLSessionAdapter()
+    private static let apiBaseURL = "https://clean-node-api.herokuapp.com/api"
 
-        return remoteAddAccount
+    private static func makeURL(path: String) -> URL {
+        URL(string: "\(apiBaseURL)\(path)")!
+    }
+
+    static func makeRemoteAddAccount() -> AddAccount {
+        let url = makeURL(path: "/signUp")
+        return RemoteAddAccount(
+            url: url,
+            httpClient: httpClient
+        )
     }
 }
