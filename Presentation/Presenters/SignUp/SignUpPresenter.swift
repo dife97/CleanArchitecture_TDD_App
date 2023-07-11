@@ -27,7 +27,7 @@ public final class SignUpPresenter {
 
             addAccount.add(account: SignUpMapper.toAddAccountResponseModel(viewModel: viewModel)) { [weak self] result in
                 guard let self else { return }
-
+                self.loadingView.display(viewModel: LoadingViewModel(isLoading: false))
                 switch result {
                 case .success:
                     self.alertView.showMessage(viewModel: AlertViewModel(
@@ -40,7 +40,6 @@ public final class SignUpPresenter {
                         message: "Algo inesperado aconteceu, tente novamente em alguns instantes"
                     ))
                 }
-                self.loadingView.display(viewModel: LoadingViewModel(isLoading: false))
             }
         }
     }

@@ -12,6 +12,7 @@
 		943C9B022A2682EB00551354 /* URLSessionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C9B012A2682EB00551354 /* URLSessionAdapter.swift */; };
 		943C9B042A26832B00551354 /* URLSessionAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C9B032A26832B00551354 /* URLSessionAdapterTests.swift */; };
 		943C9B062A268BFC00551354 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C9B052A268BFC00551354 /* URLProtocolStub.swift */; };
+		944E31122A5CD584001EC9E1 /* PresentationFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E885A92A2FFFC30031E523 /* PresentationFactories.swift */; };
 		947ECA1829DA0E57001D8B12 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947ECA1729DA0E57001D8B12 /* Data+Extension.swift */; };
 		947ECA1B29DA229F001D8B12 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947ECA1A29DA229F001D8B12 /* XCTestCase+Extension.swift */; };
 		947ECA1D29DA2315001D8B12 /* DataFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947ECA1C29DA2315001D8B12 /* DataFactories.swift */; };
@@ -1501,6 +1502,7 @@
 			files = (
 				948141B92A3A95B60014E591 /* XCTestCase+Extension.swift in Sources */,
 				948141B82A3A95860014E591 /* AddAccountSpy.swift in Sources */,
+				944E31122A5CD584001EC9E1 /* PresentationFactories.swift in Sources */,
 				948141B12A3A94570014E591 /* SignUpComposerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
